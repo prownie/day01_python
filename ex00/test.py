@@ -15,14 +15,14 @@ print(first_book.last_update)
 print(first_book.creation_date)
 print(first_book.recipes_list)
 
-tourte = Recipe("tourte", 3, 90, ['pain', 'fromage'], "nom nom", "starter")
-print(tourte)
+test = Recipe("tourte", 3, 90, ['pain', 'fromage'], "nom nom", "starter")
+print(test)
 
 
 print("----------------------------------------------------")
 first_book.get_recipes_by_types("starter")
 
-first_book.add_recipe(tourte)
+first_book.add_recipe(test)
 first_book.get_recipes_by_types("starter")
 
 print("----------------------------------------------------")
