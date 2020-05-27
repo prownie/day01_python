@@ -43,7 +43,7 @@ class Vector:
             while i < len(val.values):
                 rep.append(val.values[i] + self.values[i])
                 i += 1
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can't add, different vector sizes",end='')
 
@@ -58,7 +58,7 @@ class Vector:
             while i < len(val.values):
                 rep.append(val.values[i] + self.values[i])
                 i += 1
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can't add, different vector sizes",end='')
 
@@ -67,13 +67,13 @@ class Vector:
         if isinstance(val, int) or isinstance(val, float):
             for i in self.values:
                 rep.append(i - val)
-            return(rep)
+            return(Vector(rep))
         elif (isinstance(val, Vector) and len(val.values) == len(self.values)):
             i = 0
             while i < len(val.values):
                 rep.append(self.values[i] - val.values[i])
                 i += 1
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can't substract, different vector sizes",end='')
 
@@ -88,7 +88,7 @@ class Vector:
             while i < len(val.values):
                 rep.append(val.values[i] - self.values[i])
                 i += 1
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can't substract, different vector sizes",end='')
 
@@ -97,7 +97,7 @@ class Vector:
         if (isinstance(val, int) or isinstance(val, float)) and int(val) != 0:
             for i in self.values:
                 rep.append(i / val)
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can only divid vector by a scalar not null (int/float)",end='')
 
@@ -109,7 +109,7 @@ class Vector:
                     print("Can't divide by 0")
                     return(0)
                 rep.append(val / i)
-            return(rep)
+            return(Vector(rep))
         else:
             print("Can only divid vector by a scalar not null (int/float)",end='')
 
@@ -118,14 +118,14 @@ class Vector:
         if isinstance(val, int) or isinstance(val, float):
             for i in self.values:
                 rep.append(i * val)
-            return(rep)
+            return(Vector(rep))
         elif (isinstance(val, Vector) and len(val.values) == len(self.values)):
             i = 0
             rep = 0
             while i < len(self.values):
                 rep += val.values[i] * self.values[i]
                 i += 1
-            return rep
+            return (rep)
         else:
             print("Can only multiply vector of the same size, or by a scalar",end='')
 
@@ -134,14 +134,14 @@ class Vector:
         if isinstance(val, int) or isinstance(val, float):
             for i in self.values:
                 rep.append(i * val)
-            return(rep)
+            return(Vector(rep))
         elif (isinstance(val, Vector) and len(val.values) == len(self.values)):
             i = 0
             rep = 0
             while i < len(self.values):
                 rep += val.values[i] * self.values[i]
                 i += 1
-            return rep
+            return (rep)
         else:
             print("Can only multiply vector of the same size, or by a scalar",end='')
 
@@ -219,4 +219,13 @@ print(vec1)
 print("\n----------repr tests----------\n")
 print("vectest=eval(repr(vec1)):")
 vectest=eval(repr(vec1))
-print("vectest=\n",vectest) 
+print("vectest=\n",vectest)
+
+
+
+print("\n\n\n")
+print(repr(vec1)) 
+
+VECTOR = Vector([2.0, 1.0, 0.0, 5.0, 10.0])
+
+print(VECTOR)

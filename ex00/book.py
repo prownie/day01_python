@@ -26,7 +26,7 @@ class Book:
     def get_recipe_by_name(self, name):
         for recipe_type in self.recipes_list:
             for recipe in self.recipes_list[recipe_type]:
-                if (name == recipe):
+                if (name == recipe.name):
                     print("Recipe : " + name + " found !")
                     return(self.recipes_list[recipe_type][name])
         print("Recipe : " + name + " not found")
